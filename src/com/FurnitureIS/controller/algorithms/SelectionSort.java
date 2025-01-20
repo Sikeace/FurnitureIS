@@ -23,7 +23,7 @@ public class SelectionSort {
             int minIndex = step;
 
             for (int next = step + 1; next < listSize; next++) {
-                // Compare string properties (e.g., modelName) lexicographically
+                // Compare string properties (e.g., modelName) 
                 if (furnitureList.get(next).getName().compareTo(furnitureList.get(minIndex).getName()) < 0) {
                     minIndex = next;
                 }

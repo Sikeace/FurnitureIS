@@ -27,7 +27,7 @@ public class FurnitureIS extends javax.swing.JFrame {
     private java.awt.CardLayout FormCardLayout;
 
     /**
-     * Creates new form coursework
+     * Creates new form FurnitureIS
      */
     public FurnitureIS() {
         initComponents();
@@ -879,15 +879,6 @@ public class FurnitureIS extends javax.swing.JFrame {
         pnlLog.setLayout(pnlLogLayout);
         pnlLogLayout.setHorizontalGroup(
             pnlLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogLayout.createSequentialGroup()
-                .addGap(0, 45, Short.MAX_VALUE)
-                .addGroup(pnlLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogLayout.createSequentialGroup()
-                        .addComponent(lblLoginTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogLayout.createSequentialGroup()
-                        .addComponent(lblLoginError, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67))))
             .addGroup(pnlLogLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addGroup(pnlLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -896,6 +887,12 @@ public class FurnitureIS extends javax.swing.JFrame {
                     .addComponent(pwdFldLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLoginSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogLayout.createSequentialGroup()
+                .addGap(0, 45, Short.MAX_VALUE)
+                .addGroup(pnlLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoginError, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLoginTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
         );
         pnlLogLayout.setVerticalGroup(
             pnlLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1130,7 +1127,7 @@ public class FurnitureIS extends javax.swing.JFrame {
     // Validatin individual fields
     if (!ValidationUtil.isValidFurnitureId(ID)) {
         javax.swing.JOptionPane.showMessageDialog(this, 
-            "Furniture ID must start with letters and end with 7 digits.", 
+            "Furniture ID must start with 3 letters and end with 7 digits.", 
             "Validation Error", 
             JOptionPane.ERROR_MESSAGE);
         return;
@@ -1323,7 +1320,7 @@ public class FurnitureIS extends javax.swing.JFrame {
     // Display the result
     if (result != null) {
         JOptionPane.showMessageDialog(this,
-                "Furniture Found:\n" +
+                "Data Found:\n" +
                         "FurnitureID: " + result.getFurnitureID() + "\n" +
                         "Name: " + result.getName() + "\n" +
                         "Type: " + result.getType() + "\n" +
@@ -1332,7 +1329,8 @@ public class FurnitureIS extends javax.swing.JFrame {
                 "Search Result",
                 JOptionPane.INFORMATION_MESSAGE);
     } else {
-        JOptionPane.showMessageDialog(this, "Furniture with Name '" + searchValue + "' not found.", "Search Result", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Furniture with Name " 
+                + searchValue + " not found.", "Search Result", JOptionPane.WARNING_MESSAGE);
     }
 
     }//GEN-LAST:event_lblSearchMouseClicked
@@ -1422,6 +1420,7 @@ public class FurnitureIS extends javax.swing.JFrame {
             new FurnitureIS().setVisible(true);
         });
     }
+    
     
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
